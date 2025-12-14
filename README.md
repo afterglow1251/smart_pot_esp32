@@ -1,5 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+# Local MQTT Broker
+MQTT_BROKER=mqtt://localhost:1883
+MQTT_TOPIC=esp32/temperature
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### How to get Supabase credentials:
+1. Go to [supabase.com](https://supabase.com) and create a project
+2. Navigate to Settings → API
+3. Copy the **Project URL** and **anon public** key
+
 ## Getting Started
 
 First, run the development server:
