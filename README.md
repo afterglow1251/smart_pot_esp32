@@ -6,8 +6,8 @@ Create a `.env.local` file in the root directory with the following variables:
 
 ```env
 # Local MQTT Broker
-MQTT_BROKER=mqtt://localhost:1883
-MQTT_TOPIC=esp32/temperature
+NEXT_PUBLIC_MQTT_BROKER=mqtt://localhost:1883
+NEXT_PUBLIC_MQTT_TOPIC=esp32/temperature
 
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url

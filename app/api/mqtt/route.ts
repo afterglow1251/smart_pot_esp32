@@ -2,10 +2,9 @@ import mqtt from 'mqtt';
 
 export const dynamic = 'force-dynamic';
 
-const MQTT_BROKER = process.env.MQTT_BROKER || 'mqtt://localhost:1883';
-const MQTT_TOPIC = process.env.MQTT_TOPIC || 'esp32/temperature';
-
 export async function GET(request: Request) {
+  const MQTT_BROKER = process.env.NEXT_PUBLIC_MQTT_BROKER!;
+  const MQTT_TOPIC = process.env.NEXT_PUBLIC_MQTT_TOPIC!;
   const encoder = new TextEncoder();
   
   const stream = new ReadableStream({
@@ -28,7 +27,7 @@ export async function GET(request: Request) {
         });
       });
       
-      client.on('message', (topic, message) => {
+      client.on('message', (_topic, message) => {
         try {
           const data = JSON.parse(message.toString());
           console.log('📨 Дані з ESP32:', data);
